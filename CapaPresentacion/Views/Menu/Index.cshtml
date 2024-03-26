@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CapaEntidades.Menu>
+
+@{
+    ViewBag.Title = "Listado de Menus";
+}
+
+<h2>Lista de Menus</h2>
+
+<p>
+    @Html.ActionLink("Crear", "Create",new {var =""}, new { @class = "btn btn-primary" })
+</p>
+
+<div class="d-flex justify-content-center">
+
+<table class="table table-striped mx-auto text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+</div>
