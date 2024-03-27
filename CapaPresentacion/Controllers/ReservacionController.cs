@@ -51,9 +51,10 @@ namespace CapaPresentacion.Controllers
 		// GET: Reservacion/Edit/5
 		public ActionResult Edit(int NumeroReservacion)
 		{
-			CargarVistaValores();
 
 			var reservacion = reservacionLN.ObtenerReservacion(NumeroReservacion);
+
+			CargarVistaValoresEditables(reservacion);
 
 			if (reservacion == null) return RedirectToAction("Index");
 
@@ -102,11 +103,22 @@ namespace CapaPresentacion.Controllers
 			}
 		}
 
+		[NonAction]
+		private void CargarVistaValoresEditables(Reservacion reservacion)
+		{
+			ViewBag.Clientes = new SelectList(clienteLN.ListarClientes(), "Id", "Nombre", reservacion.IdCliente);
+			ViewBag.Menus = new SelectList(menuLN.ListarMenu(), "Id", "Descripcion", reservacion.IdMenu);
+			ViewBag.Mesas = new SelectList(mesaLN.ListarMesa(), "NumeroMesa", "Descripcion", reservacion.NumeroMesa);
+
+		}
+
+		[NonAction]
 		private void CargarVistaValores()
 		{
-			ViewBag.Clientes = new SelectList(clienteLN.ListarClientes(), "Id", "Nombre"); ;
-			ViewBag.Menus = new SelectList(menuLN.ListarMenu(), "Id", "Descripcion"); ;
-			ViewBag.Mesas = new SelectList(mesaLN.ListarMesa(), "NumeroMesa", "Descripcion"); ;
+			ViewBag.Clientes = new SelectList(clienteLN.ListarClientes(), "Id", "Nombre");
+			ViewBag.Menus = new SelectList(menuLN.ListarMenu(), "Id", "Descripcion");
+			ViewBag.Mesas = new SelectList(mesaLN.ListarMesa(), "NumeroMesa", "Descripcion");
+
 		}
 	}
 }

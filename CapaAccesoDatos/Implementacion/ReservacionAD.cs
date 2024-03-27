@@ -202,6 +202,9 @@ namespace CapaAccesoDatos.Implementacion
 									reservacion.NumeroReservacion = NumeroReservacion;
 									reservacion.FechaReservacion = (DateTime)reader["FechaReservacion"];
 									reservacion.Cantidad = Convert.ToInt32(reader["Cantidad"].ToString());
+									reservacion.IdCliente = Convert.ToInt32(reader["IdCliente"].ToString());
+									reservacion.IdMenu = Convert.ToInt32(reader["IdMenu"].ToString());
+									reservacion.NumeroMesa = Convert.ToInt32(reader["NumeroMesa"].ToString());
 									reservacion.Cliente = new Cliente
 									{
 										Nombre = reader["Nombre"].ToString(),
@@ -216,7 +219,6 @@ namespace CapaAccesoDatos.Implementacion
 									};
 									reservacion.Mesa = new Mesa
 									{
-										NumeroMesa = Convert.ToInt32(reader["NumeroMesa"].ToString()),
 										Descripcion = reader["MesaDescripcion"].ToString(),
 									};
 

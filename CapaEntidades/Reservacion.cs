@@ -13,6 +13,7 @@ namespace CapaEntidades
 		public int NumeroMesa { get; set; }
 		[Display(Name = "Descripcion de Menu")]
 		public int IdMenu { get; set; }
+		[Display(Name = "Cant. Personas")]
 		public int Cantidad { get; set; }
 		[Display(Name = "Fecha de Reservacion")]
 		[DataType(DataType.DateTime)]

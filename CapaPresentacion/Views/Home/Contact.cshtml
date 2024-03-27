@@ -1,19 +1,25 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contacto";
 }
 <main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+    <h2 id="title">@ViewBag.Title</h2>
 
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <div class="card text-center">
+        <div class="card-header">
+            Informacion de Contacto
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <address>
+                    Punratenas<br />
+                    Golfito<br />
+                    Rio Claro<br />
+                </address>
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
+                <address>
+                    <strong>Correo:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+                </address>
+            </p>            
+        </div>
+    </div>
 </main>
