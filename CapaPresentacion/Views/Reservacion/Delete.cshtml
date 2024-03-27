@@ -1,0 +1,111 @@
+﻿@model CapaEntidades.Reservacion
+
+@{
+    ViewBag.Title = "Eliminar Reservacion";
+}
+
+<h2>Eliminar Reservacion</h2>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroReservacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumeroReservacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaReservacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaReservacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dd>
+            <h3>Informacion de Cliente</h3>
+            <hr />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Apellidos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.CorreoElectronico)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.CorreoElectronico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Telefono)
+        </dd>
+
+        <dd>
+            <h3>Informacion de Menu</h3>
+            <hr />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Menu.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Menu.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Menu.Precio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Menu.Precio)
+        </dd>
+
+        <dd>
+            <h3>Informacion de Mesa</h3>
+            <hr />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mesa.NumeroMesa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Mesa.NumeroMesa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mesa.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Mesa.Descripcion)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger btn-lg w-50" onclick="return confirm('Desea eliminar?')" />
+        </div>
+    }
+</div>

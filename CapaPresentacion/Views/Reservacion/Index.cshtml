@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CapaEntidades.Reservacion>
+
+@{
+    ViewBag.Title = "Listado de Reservaciones";
+}
+
+<h2>Lista de Reservaciones</h2>
+
+<p class="text-lg-end mb-4">
+    @Html.ActionLink("Crear", "Create", new { var = "" }, new { @class = "btn btn-primary btn-lg w-25" })
+</p>
+
+<div class="d-flex justify-content-center">
+
+    <table class="table table-bordered mx-auto text-center table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroReservacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaReservacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente.Apellidos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Menu.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroMesa)
+                </th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroReservacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaReservacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Menu.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroMesa)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { item.NumeroReservacion }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Detalles", "Details", new { item.NumeroReservacion }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { item.NumeroReservacion }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

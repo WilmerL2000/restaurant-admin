@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CapaEntidades
 {
 	public class Menu
 	{
 		public int Id { get; set; }
+		[Display(Name = "Descripcion de Menu")]
 		public string Descripcion { get; set; }
+		[Display(Name = "Precio de Menu")]
 		public decimal Precio { get; set; }
 	}
 }

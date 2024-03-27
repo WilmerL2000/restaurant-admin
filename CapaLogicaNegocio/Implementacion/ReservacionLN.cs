@@ -1,4 +1,5 @@
-﻿using CapaEntidades;
+﻿using CapaAccesoDatos.Implementacion;
+using CapaEntidades;
 using CapaLogicaNegocio.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -7,29 +8,70 @@ namespace CapaLogicaNegocio.Implementacion
 {
 	public class ReservacionLN : IReservacionLN
 	{
+		private readonly ReservacionAD reservacionAD = new ReservacionAD();
 		public bool ActualizarReservacion(int NumeroReservacion, Reservacion reservacion)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				var reservacionEncontrada = reservacionAD.ObtenerReservacion(NumeroReservacion);
+
+				return reservacion == null ? throw new OperationCanceledException("La reservacion no existe no existe") : reservacionAD.ActualizarReservacion(NumeroReservacion, reservacion);
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
 		}
 
 		public bool EliminarReservacion(int NumeroReservacion)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				var reservacionEncontrada = reservacionAD.ObtenerReservacion(NumeroReservacion);
+
+				return reservacionEncontrada == null ? throw new OperationCanceledException("La reservacion no existe no existe") : reservacionAD.EliminarReservacion(NumeroReservacion);
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
 		}
 
 		public bool InsertarReservacion(Reservacion reservacion)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				return reservacionAD.InsertarReservacion(reservacion);
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
 		}
 
 		public List<Reservacion> ListarReservacion()
 		{
-			throw new NotImplementedException();
+			try
+			{
+				return reservacionAD.ListarReservacion();
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
 		}
 
 		public Reservacion ObtenerReservacion(int NumeroReservacion)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				return reservacionAD.ObtenerReservacion(NumeroReservacion);
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
 		}
 	}
 }

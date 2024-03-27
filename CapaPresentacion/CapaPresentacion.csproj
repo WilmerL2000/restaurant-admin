@@ -201,6 +201,10 @@
     <Content Include="Views\Cliente\Edit.cshtml" />
     <Content Include="Views\Cliente\Delete.cshtml" />
     <Content Include="Views\Reservacion\Create.cshtml" />
+    <Content Include="Views\Reservacion\Index.cshtml" />
+    <Content Include="Views\Reservacion\Edit.cshtml" />
+    <Content Include="Views\Reservacion\Details.cshtml" />
+    <Content Include="Views\Reservacion\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

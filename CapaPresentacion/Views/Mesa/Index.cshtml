@@ -6,22 +6,24 @@
 
 <h2>Lista de Mesas</h2>
 
-<p>
-    @Html.ActionLink("Crear", "Create", new { var = "" }, new { @class = "btn btn-primary" })
+<p class="text-lg-end mb-4">
+    @Html.ActionLink("Crear", "Create", new { var = "" }, new { @class = "btn btn-primary btn-lg w-25" })
 </p>
 
 <div class="d-flex justify-content-center">
 
-    <table class="table table-striped mx-auto text-center">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroMesa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th></th>
-        </tr>
+    <table class="table table-bordered mx-auto text-center table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroMesa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
 
         @foreach (var item in Model)
         {

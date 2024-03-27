@@ -5,9 +5,9 @@ namespace CapaEntidades
 {
 	public class Reservacion
 	{
-		[Display(Name = "Numero de Reservacion")]
+		[Display(Name = "Reservacion #")]
 		public int NumeroReservacion { get; set; }
-		[Display(Name = "Correo de Cliente")]
+		[Display(Name = "Nombre de Cliente")]
 		public int IdCliente { get; set; }
 		[Display(Name = "Numero de Mesa")]
 		public int NumeroMesa { get; set; }
@@ -16,10 +16,11 @@ namespace CapaEntidades
 		public int Cantidad { get; set; }
 		[Display(Name = "Fecha de Reservacion")]
 		[DataType(DataType.DateTime)]
+		[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
 		public DateTime FechaReservacion { get; set; }
 
-		public virtual Cliente Clientes { get; set; }
-		public virtual Menu Menu { get; set; }
-		public virtual Mesa Mesas { get; set; }
+		public Cliente Cliente { get; set; }
+		public Menu Menu { get; set; }
+		public Mesa Mesa { get; set; }
 	}
 }

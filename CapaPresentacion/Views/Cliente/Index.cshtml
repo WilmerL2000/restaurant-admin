@@ -6,28 +6,30 @@
 
 <h2>Lista de Clientes</h2>
 
-<p>
-    @Html.ActionLink("Crear", "Create", new { var = "" }, new { @class = "btn btn-primary" })
+<p class="text-lg-end mb-4">
+    @Html.ActionLink("Crear", "Create", new { var = "" }, new { @class = "btn btn-primary btn-lg w-25" })
 </p>
 
 <div class="d-flex justify-content-center">
 
-    <table class="table table-striped mx-auto text-center">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellidos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CorreoElectronico)
-            </th>
-            <th></th>
-        </tr>
+    <table class="table table-bordered mx-auto text-center table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellidos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CorreoElectronico)
+                </th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
 
         @foreach (var item in Model)
         {
